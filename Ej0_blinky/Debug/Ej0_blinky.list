@@ -16,9 +16,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
   5 .preinit_array 00000000  080018a0  080018a0  00003018  2**0
                   CONTENTS, ALLOC, LOAD, DATA
   6 .init_array   00000004  080018a0  080018a0  000028a0  2**2
-                  CONTENTS, ALLOC, LOAD, DATA
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
   7 .fini_array   00000004  080018a4  080018a4  000028a4  2**2
-                  CONTENTS, ALLOC, LOAD, DATA
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
   8 .data         00000018  20000000  080018a8  00003000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   9 .ccmram       00000000  10000000  10000000  00003018  2**0
@@ -39,15 +39,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00024af6  00000000  00000000  000092bd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00006f41  00000000  00000000  0002ddb3  2**0
+ 18 .debug_line   00006dbe  00000000  00000000  0002ddb3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e0b81  00000000  00000000  00034cf4  2**0
+ 19 .debug_str    000e0b78  00000000  00000000  00034b71  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  00115875  2**0
+ 20 .comment      00000043  00000000  00000000  001156e9  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00001114  00000000  00000000  001158b8  2**2
+ 21 .debug_frame  00001114  00000000  00000000  0011572c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000062  00000000  00000000  001169cc  2**0
+ 22 .debug_line_str 00000059  00000000  00000000  00116840  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3497,8 +3497,8 @@ int main(void)
 	  BSP_LED_Toggle(LED1);
  80016e6:	2000      	movs	r0, #0
  80016e8:	f7fe ff62 	bl	80005b0 <BSP_LED_Toggle>
-	  HAL_Delay(1000);
- 80016ec:	f44f 707a 	mov.w	r0, #1000	@ 0x3e8
+	  HAL_Delay(4000);
+ 80016ec:	f44f 607a 	mov.w	r0, #4000	@ 0xfa0
  80016f0:	f7ff f84c 	bl	800078c <HAL_Delay>
 	  BSP_LED_Toggle(LED1);
  80016f4:	bf00      	nop

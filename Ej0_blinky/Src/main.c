@@ -32,7 +32,7 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
+/* Private variables -----------------------------------------------------------*/
 /* UART handler declaration */
 UART_HandleTypeDef UartHandle;
 
@@ -40,7 +40,6 @@ UART_HandleTypeDef UartHandle;
 
 static void SystemClock_Config(void);
 static void Error_Handler(void);
-
 /* Private functions ---------------------------------------------------------*/
 
 /**
@@ -72,7 +71,7 @@ int main(void)
   while (1)
   {
 	  BSP_LED_Toggle(LED1);
-	  HAL_Delay(1000);
+	  HAL_Delay(4000);
   }
 }
 
